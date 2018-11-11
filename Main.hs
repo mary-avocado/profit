@@ -14,7 +14,9 @@ main =
 calc =
   \y -> 
   \d ->
-    (rate*d)*y+d
+    if y == 0
+    then d
+    else calc (y-1) (d*rate+d)
                                   
 rate = 0.07
 
